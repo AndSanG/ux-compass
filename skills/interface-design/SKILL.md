@@ -19,7 +19,7 @@ Two rules drive everything below:
 - Turning research, personas or requirements into a first layout.
 - Reviewing your own design proposal before building it.
 
-Not for: scoring an existing product against heuristics (use a usability evaluation method instead), brand identity or illustration work, or framework-specific code questions. The rationale produced here can still feed implementation.
+Not for: scoring an existing product against heuristics (use the `interface-evaluation` skill), brand identity or illustration work, or framework-specific code questions. The rationale produced here can still feed implementation.
 
 ## Workflow
 

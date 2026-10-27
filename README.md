@@ -7,7 +7,7 @@ Agent skills that guide UI/UX design decisions. Load them into Claude Code or an
 | Skill | What it does | Status |
 |---|---|---|
 | [`interface-design`](skills/interface-design/SKILL.md) | Turns a brief into a user frame, the behavioral patterns that matter, a screen layout (hierarchy, grouping, flow, layout patterns) and a rationale table | Available |
-| `interface-evaluation` | Reviews an existing interface with usability heuristics and severity ratings, then maps each problem back to a design pattern that fixes it | Planned |
+| [`interface-evaluation`](skills/interface-evaluation/SKILL.md) | Reviews an existing interface with Nielsen's 10 heuristics, rates each problem's severity, and maps every fix back to a design pattern | Available |
 
 ## Install
 
@@ -27,6 +27,7 @@ Example prompts:
 - "Lay out an admin dashboard for a small store owner."
 - "Where should the filters go on this product list, and should they be in an accordion?"
 - "Here is my Figma frame description. Is the hierarchy right?"
+- "Review these screenshots for usability problems and tell me what to fix first."
 
 For a full request, the agent answers with:
 
@@ -36,6 +37,8 @@ For a full request, the agent answers with:
 4. **Rationale table**: decision, user need, principle, alternative rejected.
 5. **Open questions** to test with real users.
 
+Use them as a loop: design with `interface-design`, review with `interface-evaluation`, send the fixes back to the design patterns.
+
 ## Structure
 
 ```
@@ -44,11 +47,15 @@ skills/interface-design/
   references/designing-for-people.md      context, goals, research, 13 behavioral patterns
   references/screen-layout.md             hierarchy, grid, Gestalt, flow, regions, 8 layout patterns
   references/design-rationale-template.md template and a worked example
+skills/interface-evaluation/
+  SKILL.md                                method choice, workflow, report format, checklist
+  references/heuristics.md                10 heuristics with questions, failures and fixes mapped to patterns
+  references/severity-and-reporting.md   0-4 scale, finding format, worked example, user-test handoff
 ```
 
 ## Attribution
 
-Draws on concepts from J. Tidwell, C. Brewer and A. Valencia, *Designing Interfaces: Patterns for Effective Interaction Design*, 3rd ed. (O'Reilly, 2020), chapters 1 and 4. Pattern names are the authors'; the explanations, tables and examples here are original. This project is not affiliated with or endorsed by the authors or the publisher. Read the book for the full treatment.
+Heuristics and severity ratings follow J. Nielsen and R. Molich and the Nielsen Norman Group (nngroup.com), summarized in original words. Design patterns draw on concepts from J. Tidwell, C. Brewer and A. Valencia, *Designing Interfaces: Patterns for Effective Interaction Design*, 3rd ed. (O'Reilly, 2020), chapters 1 and 4. Pattern names are the authors'; the explanations, tables and examples here are original. This project is not affiliated with or endorsed by the authors or the publisher. Read the book for the full treatment.
 
 ## License
 
