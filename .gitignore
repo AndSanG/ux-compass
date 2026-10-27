@@ -1,0 +1,4 @@
+sources/
+*.pdf
+*.txt
+.DS_Store
